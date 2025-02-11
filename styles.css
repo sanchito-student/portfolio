@@ -18,7 +18,24 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #4C5FD5;
+    color: #7F8CFF;
+    position: relative;
+    cursor: pointer;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #7F8CFF;
+    transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
 }
 
 .menu-icon {
@@ -30,9 +47,12 @@ body {
 .hero {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: start;
+    text-align: left;
     padding: 40px 10%;
+    background-image: url('./images/Header-bg.svg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-title {
@@ -51,7 +71,7 @@ body {
 /* Social Links */
 .connect-title {
     margin-top: 20px;
-    color: #4C5FD5;
+    color: #7F8CFF;
     font-weight: bold;
 }
 
@@ -73,6 +93,9 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        background-image: url('./images/header-shapes-mobile@2x.svg');
+    }
     .hero-title {
         font-size: 2rem;
     }
